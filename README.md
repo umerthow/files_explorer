@@ -4,6 +4,10 @@ A Windows-Explorer-style web app: a left panel showing the entire folder hierarc
 
 Built as a Bun monorepo using clean architecture, with Elysia + Drizzle on the backend and Vue 3 + Vite on the frontend.
 
+<p align="center">
+  <img src="docs/screenshot/explorer.png" alt="Explorer UI" width="800" />
+</p>
+
 ---
 
 ## Stack
