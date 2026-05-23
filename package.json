@@ -1,0 +1,26 @@
+{
+  "name": "windows-explorer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n be,fe -c blue,magenta \"cd apps/backend && bun run dev\" \"cd apps/frontend && bun run dev\"",
+    "build": "cd packages/shared && bun run build && cd ../../apps/backend && bun run build && cd ../frontend && bun run build",
+    "test": "cd apps/backend && bun test && cd ../frontend && bun run test",
+    "lint": "biome check .",
+    "format": "biome format --write .",
+    "db:generate": "cd apps/backend && bun run db:generate",
+    "db:migrate": "cd apps/backend && bun run db:migrate",
+    "db:seed": "cd apps/backend && bun run db:seed",
+    "db:reset": "cd apps/backend && bun run db:reset"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "concurrently": "^9.1.0",
+    "typescript": "^5.6.3"
+  }
+}
